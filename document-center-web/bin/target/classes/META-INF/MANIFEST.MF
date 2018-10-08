@@ -1,0 +1,72 @@
+Manifest-Version: 1.0
+Built-By: laogc
+Class-Path: ./ lib/document-center-api-1.0.0-SNAPSHOT.jar lib/framewor
+ k-api-1.0.0-20180626.074857-3.jar lib/fastjson-1.2.31.jar lib/framewo
+ rk-mybatis-1.0.0-20180312.022629-3.jar lib/framework-core-1.0.0-20180
+ 524.034626-3.jar lib/spring-boot-starter-jdbc-1.4.3.RELEASE.jar lib/t
+ omcat-jdbc-8.5.6.jar lib/tomcat-juli-8.5.6.jar lib/spring-jdbc-4.3.5.
+ RELEASE.jar lib/commons-lang-2.6.jar lib/commons-beanutils-1.9.2.jar 
+ lib/orika-core-1.5.0.jar lib/paranamer-2.8.jar lib/concurrentlinkedha
+ shmap-lru-1.4.2.jar lib/java-sizeof-0.0.4.jar lib/janino-2.7.5.jar li
+ b/commons-compiler-2.7.5.jar lib/freemarker-2.3.16.jar lib/poi-excela
+ nt-3.9.jar lib/poi-3.9.jar lib/poi-ooxml-3.9.jar lib/poi-ooxml-schema
+ s-3.9.jar lib/xmlbeans-2.3.0.jar lib/stax-api-1.0.1.jar lib/dom4j-1.6
+ .1.jar lib/xml-apis-1.0.b2.jar lib/ant-1.8.2.jar lib/ant-launcher-1.8
+ .2.jar lib/jdom-1.1.3.jar lib/javassist-3.19.0-GA.jar lib/jackson-dat
+ abind-2.8.5.jar lib/mybatis-spring-boot-starter-1.2.0.jar lib/mybatis
+ -spring-boot-autoconfigure-1.2.0.jar lib/mybatis-3.4.2.jar lib/mybati
+ s-spring-1.3.1.jar lib/spring-boot-starter-web-1.4.3.RELEASE.jar lib/
+ spring-boot-starter-tomcat-1.4.3.RELEASE.jar lib/tomcat-embed-core-8.
+ 5.6.jar lib/tomcat-embed-el-8.5.6.jar lib/tomcat-embed-websocket-8.5.
+ 6.jar lib/hibernate-validator-5.2.4.Final.jar lib/validation-api-1.1.
+ 0.Final.jar lib/jboss-logging-3.2.1.Final.jar lib/spring-web-4.3.5.RE
+ LEASE.jar lib/spring-webmvc-4.3.5.RELEASE.jar lib/velocity-1.7.jar li
+ b/commons-collections-3.2.1.jar lib/druid-1.0.18.jar lib/jsqlparser-0
+ .9.6.jar lib/mysql-connector-java-5.1.40.jar lib/framework-security-1
+ .0.0-20180807.030046-3.jar lib/framework-security-common-1.0.0-201806
+ 26.074921-4.jar lib/framework-util-1.0.0-20180809.085534-4.jar lib/fr
+ amework-sso-1.0.0-20180312.022658-2.jar lib/log4j-over-slf4j-1.7.25.j
+ ar lib/commons-lang3-3.5.jar lib/commons-collections4-4.1.jar lib/spr
+ ing-boot-starter-redis-1.4.3.RELEASE.jar lib/spring-data-redis-1.7.6.
+ RELEASE.jar lib/spring-data-keyvalue-1.1.6.RELEASE.jar lib/spring-dat
+ a-commons-1.12.6.RELEASE.jar lib/spring-tx-4.2.9.RELEASE.jar lib/spri
+ ng-oxm-4.2.9.RELEASE.jar lib/spring-context-support-4.2.9.RELEASE.jar
+  lib/jcl-over-slf4j-1.7.22.jar lib/jedis-2.8.2.jar lib/commons-pool2-
+ 2.4.2.jar lib/spring-boot-starter-aop-1.4.3.RELEASE.jar lib/aspectjwe
+ aver-1.8.9.jar lib/spring-boot-starter-thymeleaf-1.5.2.RELEASE.jar li
+ b/thymeleaf-spring4-2.1.5.RELEASE.jar lib/thymeleaf-2.1.5.RELEASE.jar
+  lib/ognl-3.0.8.jar lib/unbescape-1.1.0.RELEASE.jar lib/thymeleaf-lay
+ out-dialect-1.4.0.jar lib/groovy-2.4.3.jar lib/spring-boot-configurat
+ ion-processor-1.4.3.RELEASE.jar lib/json-20140107.jar lib/shiro-core-
+ 1.2.4.jar lib/shiro-web-1.2.4.jar lib/shiro-spring-1.2.4.jar lib/shir
+ o-ehcache-1.2.4.jar lib/ehcache-core-2.5.0.jar lib/jaxrpc-api-1.1.jar
+  lib/axis-1.4.jar lib/framework-web-common-1.0.0-20180808.031326-6.ja
+ r lib/springfox-swagger2-2.5.0.jar lib/swagger-annotations-1.5.9.jar 
+ lib/swagger-models-1.5.9.jar lib/springfox-spi-2.5.0.jar lib/springfo
+ x-core-2.5.0.jar lib/springfox-schema-2.5.0.jar lib/springfox-swagger
+ -common-2.5.0.jar lib/springfox-spring-web-2.5.0.jar lib/guava-18.0.j
+ ar lib/classmate-1.3.1.jar lib/spring-plugin-core-1.2.0.RELEASE.jar l
+ ib/spring-plugin-metadata-1.2.0.RELEASE.jar lib/mapstruct-1.0.0.Final
+ .jar lib/springfox-swagger-ui-2.5.0.jar lib/spring-boot-starter-1.4.3
+ .RELEASE.jar lib/spring-boot-1.4.3.RELEASE.jar lib/spring-boot-autoco
+ nfigure-1.4.3.RELEASE.jar lib/spring-boot-starter-logging-1.4.3.RELEA
+ SE.jar lib/logback-classic-1.1.8.jar lib/logback-core-1.1.8.jar lib/j
+ ul-to-slf4j-1.7.22.jar lib/snakeyaml-1.17.jar lib/jackson-core-2.8.5.
+ jar lib/jackson-annotations-2.8.5.jar lib/commons-httpclient-3.0.jar 
+ lib/commons-codec-1.2.jar lib/axis-jaxrpc-1.4.jar lib/commons-discove
+ ry-0.2.jar lib/axis-saaj-1.4.jar lib/wsdl4j-1.6.2.jar lib/commons-fil
+ eupload-1.3.3.jar lib/commons-io-2.2.jar lib/elastic-job-lite-core-2.
+ 0.4.jar lib/elastic-job-common-core-2.0.4.jar lib/lombok-1.16.4.jar l
+ ib/curator-framework-2.10.0.jar lib/curator-client-2.10.0.jar lib/cur
+ ator-recipes-2.10.0.jar lib/curator-test-2.10.0.jar lib/commons-math-
+ 2.2.jar lib/gson-2.6.1.jar lib/quartz-2.2.1.jar lib/commons-exec-1.3.
+ jar lib/elastic-job-lite-spring-2.0.4.jar lib/dubbo-2.5.3.jar lib/zoo
+ keeper-3.4.6.jar lib/slf4j-api-1.6.1.jar lib/jline-0.9.94.jar lib/net
+ ty-3.7.0.Final.jar lib/zkclient-0.1.0.jar lib/spring-context-4.3.5.RE
+ LEASE.jar lib/spring-aop-4.3.5.RELEASE.jar lib/spring-expression-4.3.
+ 5.RELEASE.jar lib/spring-core-4.3.5.RELEASE.jar lib/commons-logging-1
+ .2.jar lib/spring-beans-4.3.5.RELEASE.jar
+Build-Jdk: 1.8.0_111
+Created-By: Maven Integration for Eclipse
+Main-Class: com.hwagain.ehr.EhrCenterApplicationMain
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://code.alibabatech.com/schema/dubbo  
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd  
+        ">
+
+	<dubbo:application name="hwagain-sys-provider" />
+
+
+	<!-- 使用multicast广播注册中心暴露服务地址 -->
+	<!--<dubbo:registry address="multicast://224.121.6.7:1234" /> -->
+
+	<!-- 使用zookeeper注册中心暴露服务地址 -->
+	<dubbo:registry id="hwagain-sys-provider-registry" protocol="zookeeper"
+		address="${sys.config.dubbo.zookeeper-address}" />
+		
+    <dubbo:consumer timeout="50000" filter="loginUserFilter" />
+
+	<dubbo:reference id="authorityService" interface="com.hwagain.framework.api.authority.api.IAuthorityApi" version="${sys.config.dubbo.provider-version}"/>
+	<dubbo:reference id="sysAuthRoleService" interface="com.hwagain.framework.api.authority.api.ISysAuthRoleApi" version="${sys.config.dubbo.provider-version}"/>
+	<dubbo:reference id="sysOrgService"  interface="com.hwagain.framework.api.org.api.ISysOrgService" version="${sys.config.dubbo.provider-version}" />
+	<dubbo:reference id="sysOrgDepartmentService"  interface="com.hwagain.framework.api.org.api.ISysOrgDepartmentApi" version="${sys.config.dubbo.provider-version}" />
+</beans>  

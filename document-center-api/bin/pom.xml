@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hwagain.documentcenter</groupId>
+		<artifactId>hwagain-center</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>document-center-api</artifactId>
+	<name>document-center-api</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- 指定本地mip包仓库 -->
+	<repositories>
+		<!-- <repository> <id>maven-releases</id> <name>maven-releases</name> <url>http://localhost:8081/repository/maven-releases/</url> 
+			<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled> 
+			</snapshots> </repository> <repository> <id>maven-snapshots</id> <name>maven-snapshots</name> 
+			<url>http://localhost:8081/repository/maven-snapshots/</url> <releases> <enabled>false</enabled> 
+			</releases> <snapshots> <enabled>true</enabled> </snapshots> </repository> -->
+		<repository>
+			<id>public</id>
+			<name>Public</name>
+			<url>http://websvn.hwagain.com:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>com.hwagain.framework</groupId>
+			<artifactId>framework-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

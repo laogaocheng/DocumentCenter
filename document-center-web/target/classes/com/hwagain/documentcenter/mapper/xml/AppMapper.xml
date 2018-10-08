@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hwagain.documentcenter.mapper.AppMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.hwagain.documentcenter.entity.App">
+		<id column="fd_id" property="fdId" />
+		<result column="appName" property="appName" />
+		<result column="appDesc" property="appDesc" />
+		<result column="appSecret" property="appSecret" />
+		<result column="create_time" property="createTime" />
+		<result column="creator" property="creator" />
+	</resultMap>
+
+</mapper>

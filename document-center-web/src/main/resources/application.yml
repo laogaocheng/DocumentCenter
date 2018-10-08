@@ -1,0 +1,161 @@
+hwagain: 
+ conf:
+    allowedOrigins:
+                 - '*'
+    attachmentBaseDirectory : ./upload
+    defaultLocale: zh_CN
+    debugPageResult: false
+    recordOperateLog: true
+    supportLocales: 
+                 - zh_CN 
+                 - en_US
+    defaultPage: readme.html
+    hostPrefix : 
+    staticMappings:
+         /resource/**: 
+                - classpath:/WEB-INF/static/                
+         /flowchart/**: 
+            - classpath:/WEB-INF/flowchart/
+    #rpc不需要增加用户信息方法
+    notNeedUserMethods: 
+ clouddisk:
+    url: http://10.0.82.233
+    username: laogc
+    password: 1zxcvbnm1
+ apiInfo:
+       title: HWAGAIN REST API
+       description: 
+       version: 2.0.0
+       termsOfServiceUrl: 
+       contact: 
+            name: 劳高成
+            url:   
+            email:   
+       license: 
+       licenseUrl: 
+       pathsRegex: ^.*(?<!error)$
+ 
+spring:
+   http: 
+      multipart: 
+          maxFileSize: 100MB
+          maxRequestSize: 1024MB
+   datasource:
+             platform: mysql
+             url: jdbc:mysql://192.168.68.204:3306/document_center?createDatabaseIfNotExist=true&useSSL=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false
+             username: sit
+             password: abc-123
+#             url: jdbc:mysql://127.0.0.1:3306/hwagain_org_db?createDatabaseIfNotExist=true&useSSL=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+#             username: root
+#             password: 123456
+             driverClassName: com.mysql.jdbc.Driver
+             type: com.alibaba.druid.pool.DruidDataSource
+             initialSize: 5
+             minIdle: 5
+             maxActive: 20
+             # 配置获取连接等待超时的时间
+             maxWait: 60000
+             validationQuery: SELECT 1
+             testOnBorrow: false
+             testOnReturn: false
+             testWhileIdle: true
+             minEvictableIdleTimeMillis: 25200000
+             # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+             timeBetweenEvictionRunsMillis: 60000
+             removeAbandoned: true
+             removeAbandonedTimeout: 1800
+             # 打开PSCache，并且指定每个连接上PSCache的大小
+             poolPreparedStatements: true
+             maxPoolPreparedStatementPerConnectionSize: 20
+             logAbandoned: true
+             # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+             filters: stat,wall,log4j
+             useGlobalDataSourceStat: true
+             multiStatementAllow: true
+   jackson:
+          date-format: yyyy-MM-dd HH:mm:ss
+          short-date-format: yyyy-MM-dd
+   thymeleaf: 
+       prefix: classpath:/html
+       suffix: .html
+       cache: false 
+   messages:
+        basename: i18n/messages 
+   cluster:  
+      redis:
+         host: 192.168.68.207
+         port: 6379
+         password: 
+         masterName: audit6379
+         maxTotal: 200
+         maxIdle: 50
+         numTestsPerEvictionRun: 1024
+         maxWaitMillis: 1500
+         type: singleton # singleton:单机 , sentinel:哨兵, cluster:集群
+         expire: 1800
+         nodes:
+             - host: 192.168.68.207
+               port: 6379       
+
+server:
+    port: 8080
+    session: 
+        timeout: 30
+    context-path: /doc
+    tomcat:
+      uri-encoding: UTF-8
+      
+logging:
+    path: ./logs
+    file: ./logs/framework.log
+mybatis: 
+   mapperLocations: classpath*:com/hwagain/documentcenter/**/mapper/xml/*Mapper.xml 
+   typeAliasesPackage: com.hwagain.documentcenter.**.entity
+shiro:
+    conf:
+        successUrl: onLoginSuccess
+        domain: .hwagain.com
+        unauthorizedUrl:
+        loginView: /doLogin
+        openToken: true
+        securityKey: sso_dev_id
+        sysanon: 
+           - /mbpm/**
+           - /druid/**
+           - /resource/**
+           - /unauthorized
+           - /unLogin
+           - /onLoginSuccess
+           - /logoutSuccess
+           - /anonymous/**
+logback:
+    filePath: E:\Workspaces\hwagain-center\document-center-web\src\main\resources\logback.xml
+sys:
+   config:
+      dubbo:
+         zookeeper-address: 192.168.68.207:2181
+         owner: dev
+         provider-version: localdev
+         application-version: dev.1.0
+         retries: 0
+         port: 60099
+         timeout: 50000
+         org-provider-version: local.1.0
+      elastic-job: 
+         server-lists: 192.168.68.207:2181
+         namespace: org-task
+         base-sleep-time-milliseconds: 1000
+         max-sleep-time-milliseconds: 3000
+         max-retries: 3
+         orgOneOffElasticJob:
+            id: SyncElasticJob
+            cron: 0/30 * * * * ?
+            sharding-total-count: 3
+            sharding-item-parameters: 0=A,1=B,2=C
+            disabled: false 
+         orgTwoOffElasticJob:
+            id: SyncRegPsJob
+            cron: 0 0 2 ? * *
+            sharding-total-count: 3
+            sharding-item-parameters: 0=A,1=B,2=C
+            disabled: false            
